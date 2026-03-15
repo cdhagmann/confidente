@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.ratatui-ruby.dev)",
+      "WebFetch(domain:rubygems.org)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:forum.setdef.com)",
+      "Bash(chmod +x /Users/christopherhagmann/Projects/Personal/confidente/.claude/worktrees/modest-gauss/bin/confidente)",
+      "Bash(bin/rails db:migrate)",
+      "Bash(bin/rails db:seed)",
+      "Bash(gem list:*)",
+      "Bash(bundle update:*)",
+      "Bash(GEM=~/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/ratatui_ruby-1.4.2-arm64-darwin-24 cat $GEM/lib/ratatui_ruby/layout/layout.rb)",
+      "Bash(GEM=\"$HOME/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/ratatui_ruby-1.4.2-arm64-darwin-24\" cat \"$GEM/lib/ratatui_ruby/layout/layout.rb\")",
+      "Bash(ruby -e \"require ''bundler/setup''; require ''ratatui_ruby''; puts RatatuiRuby::VERSION\")",
+      "Bash(GEM=\"$HOME/.asdf/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/ratatui_ruby-1.4.2-arm64-darwin-24\")",
+      "Read(//Users/christopherhagmann/Projects/Personal/confidente/.claude/worktrees/modest-gauss/$GEM/lib/ratatui_ruby/event/key/**)"
+    ]
+  }
+}
