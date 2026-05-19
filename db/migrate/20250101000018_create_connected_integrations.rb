@@ -11,6 +11,6 @@ class CreateConnectedIntegrations < ActiveRecord::Migration[8.1]
       t.timestamps
     end
 
-    add_index :connected_integrations, [:user_id, :provider], unique: true
+    add_index :connected_integrations, [ :user_id, :provider ], unique: true
   end
 end

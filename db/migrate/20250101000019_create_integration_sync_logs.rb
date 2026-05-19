@@ -9,6 +9,6 @@ class CreateIntegrationSyncLogs < ActiveRecord::Migration[8.1]
       t.timestamps
     end
 
-    add_index :integration_sync_logs, [:connected_integration_id, :synced_at]
+    add_index :integration_sync_logs, [ :connected_integration_id, :synced_at ]
   end
 end

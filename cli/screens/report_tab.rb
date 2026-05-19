@@ -54,7 +54,7 @@ module Confidente
             frame.render_widget(
               @tui.paragraph(
                 text: "No data yet. Log some meals and symptoms to see your report.",
-                block: @tui.block(title: "Correlation Chart", borders: [:all], border_type: :rounded)
+                block: @tui.block(title: "Correlation Chart", borders: [ :all ], border_type: :rounded)
               ),
               area
             )
@@ -74,7 +74,7 @@ module Confidente
               direction: :vertical,
               bar_width: 5,
               bar_gap: 1,
-              block: @tui.block(title: "Top Ingredients by Symptom Correlation", borders: [:all], border_type: :rounded)
+              block: @tui.block(title: "Top Ingredients by Symptom Correlation", borders: [ :all ], border_type: :rounded)
             ),
             area
           )
@@ -114,7 +114,7 @@ module Confidente
           frame.render_widget(
             @tui.paragraph(
               text: lines.join("\n"),
-              block: @tui.block(title: "Summary", borders: [:all], border_type: :rounded)
+              block: @tui.block(title: "Summary", borders: [ :all ], border_type: :rounded)
             ),
             area
           )

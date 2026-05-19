@@ -9,7 +9,7 @@ class CreateWashoutWindows < ActiveRecord::Migration[8.1]
       t.timestamps
     end
 
-    add_index :washout_windows, [:meal_plan_id, :food_sensitivity_category_id, :start_date],
+    add_index :washout_windows, [ :meal_plan_id, :food_sensitivity_category_id, :start_date ],
               name: "index_washout_windows_on_plan_category_start"
   end
 end

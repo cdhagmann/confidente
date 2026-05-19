@@ -54,72 +54,72 @@ end
 # Each food: { name:, memberships: [[category_slug, severity]] }
 FOODS = [
   # Histamine-primary
-  { name: "Red Wine",            memberships: [["histamine", :high]] },
-  { name: "Sauerkraut",          memberships: [["histamine", :high]] },
-  { name: "Sardines",            memberships: [["histamine", :high]] },
-  { name: "Smoked Salmon",       memberships: [["histamine", :high]] },
-  { name: "Kefir",               memberships: [["histamine", :high]] },
-  { name: "Canned Tuna",         memberships: [["histamine", :medium]] },
-  { name: "Yogurt",              memberships: [["histamine", :medium]] },
-  { name: "Vinegar",             memberships: [["histamine", :medium]] },
+  { name: "Red Wine",            memberships: [ [ "histamine", :high ] ] },
+  { name: "Sauerkraut",          memberships: [ [ "histamine", :high ] ] },
+  { name: "Sardines",            memberships: [ [ "histamine", :high ] ] },
+  { name: "Smoked Salmon",       memberships: [ [ "histamine", :high ] ] },
+  { name: "Kefir",               memberships: [ [ "histamine", :high ] ] },
+  { name: "Canned Tuna",         memberships: [ [ "histamine", :medium ] ] },
+  { name: "Yogurt",              memberships: [ [ "histamine", :medium ] ] },
+  { name: "Vinegar",             memberships: [ [ "histamine", :medium ] ] },
 
   # Multi-category: histamine + others
-  { name: "Aged Cheddar",        memberships: [["histamine", :high],   ["glutamate", :high]] },
-  { name: "Parmesan Cheese",     memberships: [["histamine", :high],   ["glutamate", :high]] },
-  { name: "Miso Paste",          memberships: [["histamine", :high],   ["glutamate", :high], ["fodmap", :medium]] },
-  { name: "Avocado",             memberships: [["histamine", :high],   ["salicylate", :medium]] },
-  { name: "Spinach",             memberships: [["histamine", :medium], ["oxalate", :high], ["salicylate", :medium]] },
-  { name: "Tomatoes",            memberships: [["histamine", :medium], ["glutamate", :high], ["salicylate", :medium], ["lectin", :high]] },
-  { name: "Cocoa Powder",        memberships: [["histamine", :medium], ["oxalate", :high]] },
-  { name: "Strawberries",        memberships: [["histamine", :medium], ["salicylate", :high]] },
-  { name: "Raspberries",         memberships: [["histamine", :medium], ["salicylate", :high]] },
-  { name: "Walnuts",             memberships: [["histamine", :low],    ["oxalate", :high]] },
-  { name: "Soy Sauce",           memberships: [["glutamate", :high],   ["histamine", :medium]] },
+  { name: "Aged Cheddar",        memberships: [ [ "histamine", :high ],   [ "glutamate", :high ] ] },
+  { name: "Parmesan Cheese",     memberships: [ [ "histamine", :high ],   [ "glutamate", :high ] ] },
+  { name: "Miso Paste",          memberships: [ [ "histamine", :high ],   [ "glutamate", :high ], [ "fodmap", :medium ] ] },
+  { name: "Avocado",             memberships: [ [ "histamine", :high ],   [ "salicylate", :medium ] ] },
+  { name: "Spinach",             memberships: [ [ "histamine", :medium ], [ "oxalate", :high ], [ "salicylate", :medium ] ] },
+  { name: "Tomatoes",            memberships: [ [ "histamine", :medium ], [ "glutamate", :high ], [ "salicylate", :medium ], [ "lectin", :high ] ] },
+  { name: "Cocoa Powder",        memberships: [ [ "histamine", :medium ], [ "oxalate", :high ] ] },
+  { name: "Strawberries",        memberships: [ [ "histamine", :medium ], [ "salicylate", :high ] ] },
+  { name: "Raspberries",         memberships: [ [ "histamine", :medium ], [ "salicylate", :high ] ] },
+  { name: "Walnuts",             memberships: [ [ "histamine", :low ],    [ "oxalate", :high ] ] },
+  { name: "Soy Sauce",           memberships: [ [ "glutamate", :high ],   [ "histamine", :medium ] ] },
 
   # FODMAP-primary
-  { name: "Garlic",              memberships: [["fodmap", :high]] },
-  { name: "Cauliflower",         memberships: [["fodmap", :high]] },
-  { name: "Asparagus",           memberships: [["fodmap", :medium]] },
+  { name: "Garlic",              memberships: [ [ "fodmap", :high ] ] },
+  { name: "Cauliflower",         memberships: [ [ "fodmap", :high ] ] },
+  { name: "Asparagus",           memberships: [ [ "fodmap", :medium ] ] },
 
   # Multi-category: FODMAP + others
-  { name: "Onion",               memberships: [["fodmap", :high],   ["glutamate", :medium]] },
-  { name: "Wheat Bread",         memberships: [["fodmap", :high],   ["lectin", :high]] },
-  { name: "Kidney Beans",        memberships: [["fodmap", :high],   ["lectin", :high], ["oxalate", :medium]] },
-  { name: "Lentils",             memberships: [["fodmap", :medium], ["lectin", :medium]] },
-  { name: "Chickpeas",           memberships: [["fodmap", :high],   ["lectin", :high]] },
-  { name: "Peas",                memberships: [["fodmap", :medium], ["lectin", :medium]] },
-  { name: "Mushrooms",           memberships: [["fodmap", :high],   ["glutamate", :high]] },
-  { name: "Apples",              memberships: [["fodmap", :medium], ["salicylate", :high]] },
-  { name: "Soybeans",            memberships: [["fodmap", :high],   ["lectin", :high]] },
+  { name: "Onion",               memberships: [ [ "fodmap", :high ],   [ "glutamate", :medium ] ] },
+  { name: "Wheat Bread",         memberships: [ [ "fodmap", :high ],   [ "lectin", :high ] ] },
+  { name: "Kidney Beans",        memberships: [ [ "fodmap", :high ],   [ "lectin", :high ], [ "oxalate", :medium ] ] },
+  { name: "Lentils",             memberships: [ [ "fodmap", :medium ], [ "lectin", :medium ] ] },
+  { name: "Chickpeas",           memberships: [ [ "fodmap", :high ],   [ "lectin", :high ] ] },
+  { name: "Peas",                memberships: [ [ "fodmap", :medium ], [ "lectin", :medium ] ] },
+  { name: "Mushrooms",           memberships: [ [ "fodmap", :high ],   [ "glutamate", :high ] ] },
+  { name: "Apples",              memberships: [ [ "fodmap", :medium ], [ "salicylate", :high ] ] },
+  { name: "Soybeans",            memberships: [ [ "fodmap", :high ],   [ "lectin", :high ] ] },
 
   # Salicylate-primary
-  { name: "Blueberries",         memberships: [["salicylate", :high]] },
-  { name: "Broccoli",            memberships: [["salicylate", :high]] },
-  { name: "Oregano",             memberships: [["salicylate", :high]] },
-  { name: "Cucumber",            memberships: [["salicylate", :low]] },
-  { name: "Zucchini",            memberships: [["salicylate", :low]] },
-  { name: "Almonds",             memberships: [["salicylate", :high], ["oxalate", :medium]] },
-  { name: "Curry Powder",        memberships: [["salicylate", :high], ["capsaicin", :medium]] },
-  { name: "Chili Peppers",       memberships: [["capsaicin", :high],  ["salicylate", :high]] },
-  { name: "Cayenne Pepper",      memberships: [["capsaicin", :high],  ["salicylate", :high]] },
-  { name: "Paprika",             memberships: [["capsaicin", :medium], ["salicylate", :high]] },
+  { name: "Blueberries",         memberships: [ [ "salicylate", :high ] ] },
+  { name: "Broccoli",            memberships: [ [ "salicylate", :high ] ] },
+  { name: "Oregano",             memberships: [ [ "salicylate", :high ] ] },
+  { name: "Cucumber",            memberships: [ [ "salicylate", :low ] ] },
+  { name: "Zucchini",            memberships: [ [ "salicylate", :low ] ] },
+  { name: "Almonds",             memberships: [ [ "salicylate", :high ], [ "oxalate", :medium ] ] },
+  { name: "Curry Powder",        memberships: [ [ "salicylate", :high ], [ "capsaicin", :medium ] ] },
+  { name: "Chili Peppers",       memberships: [ [ "capsaicin", :high ],  [ "salicylate", :high ] ] },
+  { name: "Cayenne Pepper",      memberships: [ [ "capsaicin", :high ],  [ "salicylate", :high ] ] },
+  { name: "Paprika",             memberships: [ [ "capsaicin", :medium ], [ "salicylate", :high ] ] },
 
   # Oxalate-primary
-  { name: "Beets",               memberships: [["oxalate", :high]] },
-  { name: "Rhubarb",             memberships: [["oxalate", :high]] },
-  { name: "Brown Rice",          memberships: [["oxalate", :low]] },
-  { name: "Sweet Potatoes",      memberships: [["oxalate", :low],   ["lectin", :medium]] },
-  { name: "Peanuts",             memberships: [["oxalate", :medium], ["lectin", :high]] },
+  { name: "Beets",               memberships: [ [ "oxalate", :high ] ] },
+  { name: "Rhubarb",             memberships: [ [ "oxalate", :high ] ] },
+  { name: "Brown Rice",          memberships: [ [ "oxalate", :low ] ] },
+  { name: "Sweet Potatoes",      memberships: [ [ "oxalate", :low ],   [ "lectin", :medium ] ] },
+  { name: "Peanuts",             memberships: [ [ "oxalate", :medium ], [ "lectin", :high ] ] },
 
   # Lectin-primary
-  { name: "Bell Peppers",        memberships: [["lectin", :high],   ["capsaicin", :high]] },
-  { name: "Corn",                memberships: [["lectin", :medium]] },
+  { name: "Bell Peppers",        memberships: [ [ "lectin", :high ],   [ "capsaicin", :high ] ] },
+  { name: "Corn",                memberships: [ [ "lectin", :medium ] ] },
 
   # Glutamate-primary
-  { name: "Greek Yogurt",        memberships: [["histamine", :medium]] },
+  { name: "Greek Yogurt",        memberships: [ [ "histamine", :medium ] ] },
 
   # Capsaicin-primary
-  { name: "Jalapeños",           memberships: [["capsaicin", :high]] }
+  { name: "Jalapeños",           memberships: [ [ "capsaicin", :high ] ] }
 ].freeze
 
 FOODS.each do |attrs|

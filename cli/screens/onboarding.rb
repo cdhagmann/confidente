@@ -54,7 +54,7 @@ module Confidente
             in { type: :key, code: "backspace" }
               input = input[0...-1]
               error = nil
-            in { type: :key, code: "q" } | { type: :key, code: "c", modifiers: ["ctrl"] }
+            in { type: :key, code: "q" } | { type: :key, code: "c", modifiers: [ "ctrl" ] }
               return nil
             in { type: :key, code: code, modifiers: [] } if code.length == 1
               input += code
@@ -77,7 +77,7 @@ module Confidente
           frame.render_widget(
             @tui.paragraph(
               text: "Your name: #{input}_#{error ? "\n\nError: #{error}" : ""}",
-              block: @tui.block(title: "Name", borders: [:all], border_type: :rounded)
+              block: @tui.block(title: "Name", borders: [ :all ], border_type: :rounded)
             ),
             areas[1]
           )
@@ -98,7 +98,7 @@ module Confidente
             case @tui.poll_event(timeout: 0.05)
             in { type: :key, code: "enter" }
               break
-            in { type: :key, code: "c", modifiers: ["ctrl"] }
+            in { type: :key, code: "c", modifiers: [ "ctrl" ] }
               exit(0)
             in { type: :key, code: " " }
               cat = categories[cursor]
@@ -106,9 +106,9 @@ module Confidente
                 selected_ids.include?(cat.id) ? selected_ids.delete(cat.id) : selected_ids.add(cat.id)
               end
             in { type: :key, code: "up" }
-              cursor = [cursor - 1, 0].max
+              cursor = [ cursor - 1, 0 ].max
             in { type: :key, code: "down" }
-              cursor = [cursor + 1, categories.size - 1].min
+              cursor = [ cursor + 1, categories.size - 1 ].min
             in { type: :key, code: "a" }
               # Select all / deselect all toggle
               if selected_ids.size == categories.size
@@ -145,7 +145,7 @@ module Confidente
               highlight_symbol: "> ",
               block: @tui.block(
                 title: "Sensitivity Categories (#{selected_ids.size} selected)",
-                borders: [:all],
+                borders: [ :all ],
                 border_type: :rounded
               )
             ),
@@ -177,14 +177,14 @@ module Confidente
 
           loop do
             filtered = filter_foods(all_foods, search_query)
-            cursor = cursor.clamp(0, [filtered.size - 1, 0].max)
+            cursor = cursor.clamp(0, [ filtered.size - 1, 0 ].max)
 
             @tui.draw { |frame| render_food_selection(frame, filtered, selected_ids, pre_selected, cursor, search_query) }
 
             case @tui.poll_event(timeout: 0.05)
             in { type: :key, code: "enter" }
               break
-            in { type: :key, code: "c", modifiers: ["ctrl"] }
+            in { type: :key, code: "c", modifiers: [ "ctrl" ] }
               exit(0)
             in { type: :key, code: " " }
               food = filtered[cursor]
@@ -192,9 +192,9 @@ module Confidente
                 selected_ids.include?(food.id) ? selected_ids.delete(food.id) : selected_ids.add(food.id)
               end
             in { type: :key, code: "up" }
-              cursor = [cursor - 1, 0].max
+              cursor = [ cursor - 1, 0 ].max
             in { type: :key, code: "down" }
-              cursor = [cursor + 1, filtered.size - 1].min
+              cursor = [ cursor + 1, filtered.size - 1 ].min
             in { type: :key, code: "backspace" }
               search_query = search_query[0...-1]
               cursor = 0
@@ -247,7 +247,7 @@ module Confidente
               highlight_symbol: "> ",
               block: @tui.block(
                 title: "Foods (#{selected_ids.size} selected  · = from your categories)",
-                borders: [:all],
+                borders: [ :all ],
                 border_type: :rounded
               )
             ),
@@ -293,7 +293,7 @@ module Confidente
           frame.render_widget(
             @tui.list(
               items: items,
-              block: @tui.block(title: "Suggestions (#{suggestions.size})", borders: [:all], border_type: :rounded)
+              block: @tui.block(title: "Suggestions (#{suggestions.size})", borders: [ :all ], border_type: :rounded)
             ),
             areas[1]
           )

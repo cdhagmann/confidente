@@ -9,9 +9,9 @@ class CreateHypothesisSuggestions < ActiveRecord::Migration[8.1]
       t.timestamps
     end
 
-    add_index :hypothesis_suggestions, [:user_id, :suggested_food_id, :reason_category_id],
+    add_index :hypothesis_suggestions, [ :user_id, :suggested_food_id, :reason_category_id ],
               unique: true,
               name: "index_hypothesis_suggestions_unique"
-    add_index :hypothesis_suggestions, [:user_id, :status]
+    add_index :hypothesis_suggestions, [ :user_id, :status ]
   end
 end

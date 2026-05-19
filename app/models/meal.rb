@@ -5,5 +5,5 @@ class Meal < ApplicationRecord
   has_one :meal_plan_slot, dependent: :nullify
 
   validates :eaten_at, presence: true
-  validates :planned, inclusion: { in: [true, false] }
+  validates :planned, inclusion: { in: [ true, false ] }
 end

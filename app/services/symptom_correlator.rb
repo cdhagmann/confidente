@@ -66,11 +66,11 @@ class SymptomCorrelator
       exposure = data[:weighted_exposure_sum]
       score = exposure > 0 ? data[:weighted_symptom_sum] / exposure : 0.0
 
-      [ingredient_id, {
+      [ ingredient_id, {
         ingredient: ingredients[ingredient_id],
         score: score.round(4),
         exposure_days: data[:exposure_days]
-      }]
+      } ]
     end.to_h
 
     output.sort_by { |_, v| -v[:score] }.to_h

@@ -8,7 +8,7 @@ class CreateFoodCategoryMemberships < ActiveRecord::Migration[8.1]
       t.timestamps
     end
 
-    add_index :food_category_memberships, [:food_id, :food_sensitivity_category_id],
+    add_index :food_category_memberships, [ :food_id, :food_sensitivity_category_id ],
               unique: true,
               name: "index_food_category_memberships_on_food_and_category"
   end

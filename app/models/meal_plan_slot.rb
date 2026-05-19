@@ -6,5 +6,5 @@ class MealPlanSlot < ApplicationRecord
 
   validates :scheduled_for, presence: true
   validates :meal_time, presence: true, inclusion: { in: MEAL_TIMES }
-  validates :meal_time, uniqueness: { scope: [:meal_plan_id, :scheduled_for] }
+  validates :meal_time, uniqueness: { scope: [ :meal_plan_id, :scheduled_for ] }
 end

@@ -8,7 +8,7 @@ module Confidente
     module Screens
       # Home screen — tab-based navigation: Today | Week Plan | Report
       class Home
-        TABS = ["Today", "Week Plan", "Report"].freeze
+        TABS = [ "Today", "Week Plan", "Report" ].freeze
 
         def initialize(tui, user)
           @tui = tui
@@ -63,7 +63,7 @@ module Confidente
             titles: TABS,
             selected_index: @active_tab,
             divider: " | ",
-            block: @tui.block(title: "Confidente", borders: [:all], border_type: :rounded)
+            block: @tui.block(title: "Confidente", borders: [ :all ], border_type: :rounded)
           )
           frame.render_widget(tabs_widget, areas[0])
 
@@ -89,8 +89,8 @@ module Confidente
           case event
           in { type: :key, code: "tab" }
             @active_tab = (@active_tab + 1) % TABS.size
-          in { type: :key, code: "q" } | { type: :key, code: "c", modifiers: ["ctrl"] }
-            return :quit
+          in { type: :key, code: "q" } | { type: :key, code: "c", modifiers: [ "ctrl" ] }
+            :quit
           in { type: :key, code: "?" }
             @show_help = true
           in { type: :key, code: "r" }
@@ -123,7 +123,7 @@ module Confidente
           frame.render_widget(
             @tui.paragraph(
               text: help_text,
-              block: @tui.block(title: "Help  [Enter/q/?] close", borders: [:all], border_type: :rounded)
+              block: @tui.block(title: "Help  [Enter/q/?] close", borders: [ :all ], border_type: :rounded)
             ),
             frame.area
           )

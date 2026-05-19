@@ -17,7 +17,7 @@ module Confidente
             frame.render_widget(
               @tui.paragraph(
                 text: "No active meal plan.",
-                block: @tui.block(title: "Week Plan", borders: [:all], border_type: :rounded)
+                block: @tui.block(title: "Week Plan", borders: [ :all ], border_type: :rounded)
               ),
               area
             )
@@ -45,7 +45,7 @@ module Confidente
               selected_row: @cursor,
               block: @tui.block(
                 title: "Week Plan — #{plan.starts_on.strftime("%b %-d")} to #{plan.ends_on.strftime("%b %-d")}",
-                borders: [:all],
+                borders: [ :all ],
                 border_type: :rounded
               )
             ),
@@ -60,9 +60,9 @@ module Confidente
         def handle_event(event)
           case event
           in { type: :key, code: "up" }
-            @cursor = [@cursor - 1, 0].max
+            @cursor = [ @cursor - 1, 0 ].max
           in { type: :key, code: "down" }
-            @cursor = [@cursor + 1, 6].min
+            @cursor = [ @cursor + 1, 6 ].min
           else
             # no-op
           end
@@ -77,7 +77,7 @@ module Confidente
             today    = date == Date.today
             day_label = "#{today ? "►" : " "} #{date.strftime("%a %-d")}#{washout}"
 
-            [day_label, meal_cell(day_slots["breakfast"]), meal_cell(day_slots["lunch"]), meal_cell(day_slots["dinner"])]
+            [ day_label, meal_cell(day_slots["breakfast"]), meal_cell(day_slots["lunch"]), meal_cell(day_slots["dinner"]) ]
           end
         end
 

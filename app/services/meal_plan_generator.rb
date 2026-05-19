@@ -88,7 +88,7 @@ class MealPlanGenerator
     days.each do |day|
       meals.each do |meal|
         next if schedule[day][meal].include?(food)
-        chosen << [day, meal]
+        chosen << [ day, meal ]
         break if chosen.size >= min
       end
       break if chosen.size >= min
@@ -154,10 +154,10 @@ class MealPlanGenerator
 
   def meal_datetime(date, meal_time)
     hour = case meal_time
-           when "breakfast" then 8
-           when "lunch" then 12
-           when "dinner" then 18
-           end
+    when "breakfast" then 8
+    when "lunch" then 12
+    when "dinner" then 18
+    end
     date.to_time.change(hour: hour)
   end
 end

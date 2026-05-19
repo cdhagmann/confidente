@@ -6,7 +6,7 @@ class HypothesisSuggestion < ApplicationRecord
   enum :status, { pending: "pending", accepted: "accepted", rejected: "rejected" }
 
   validates :status, presence: true
-  validates :suggested_food_id, uniqueness: { scope: [:user_id, :reason_category_id] }
+  validates :suggested_food_id, uniqueness: { scope: [ :user_id, :reason_category_id ] }
 
   scope :pending_for_user, ->(user) { where(user: user, status: "pending") }
 end

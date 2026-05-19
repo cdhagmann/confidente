@@ -8,6 +8,6 @@ class CreateDailyControlFlags < ActiveRecord::Migration[8.1]
       t.timestamps
     end
 
-    add_index :daily_control_flags, [:daily_control_id, :flag_type]
+    add_index :daily_control_flags, [ :daily_control_id, :flag_type ]
   end
 end

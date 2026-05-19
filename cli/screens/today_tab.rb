@@ -30,7 +30,7 @@ module Confidente
         def handle_event(event)
           case event
           in { type: :key, code: "up" }
-            @cursor = [@cursor - 1, 0].max
+            @cursor = [ @cursor - 1, 0 ].max
           in { type: :key, code: "down" }
             @cursor += 1
           in { type: :key, code: "m" }
@@ -69,7 +69,7 @@ module Confidente
               highlight_symbol: "> ",
               block: @tui.block(
                 title: "Today's Meals — #{Date.today.strftime("%A, %B %-d")}",
-                borders: [:all],
+                borders: [ :all ],
                 border_type: :rounded
               )
             ),
@@ -89,7 +89,7 @@ module Confidente
           frame.render_widget(
             @tui.paragraph(
               text: lines.join("\n"),
-              block: @tui.block(title: "Daily Check-In", borders: [:all], border_type: :rounded)
+              block: @tui.block(title: "Daily Check-In", borders: [ :all ], border_type: :rounded)
             ),
             area
           )
@@ -109,7 +109,7 @@ module Confidente
               items: items,
               selected_index: @section == :symptoms ? @cursor : nil,
               highlight_symbol: "> ",
-              block: @tui.block(title: "Symptoms", borders: [:all], border_type: :rounded)
+              block: @tui.block(title: "Symptoms", borders: [ :all ], border_type: :rounded)
             ),
             area
           )
@@ -173,7 +173,7 @@ module Confidente
           frame.render_widget(
             @tui.paragraph(
               text: lines.join("\n"),
-              block: @tui.block(title: "Daily Check-In", borders: [:all], border_type: :rounded)
+              block: @tui.block(title: "Daily Check-In", borders: [ :all ], border_type: :rounded)
             ),
             frame.area
           )
@@ -200,7 +200,7 @@ module Confidente
               frame.render_widget(
                 @tui.paragraph(
                   text: "Score for #{st.name} (1=mild … 5=severe): #{score_input}_\n\n  [Enter] save   [Esc] cancel",
-                  block: @tui.block(title: "Log Symptom", borders: [:all], border_type: :rounded)
+                  block: @tui.block(title: "Log Symptom", borders: [ :all ], border_type: :rounded)
                 ),
                 frame.area
               )
@@ -235,7 +235,7 @@ module Confidente
               frame.render_widget(
                 @tui.paragraph(
                   text: "What did you eat? (ingredient name): #{input}_\n\n  [Enter] save   [Esc] cancel",
-                  block: @tui.block(title: "Log Off-Plan Meal", borders: [:all], border_type: :rounded)
+                  block: @tui.block(title: "Log Off-Plan Meal", borders: [ :all ], border_type: :rounded)
                 ),
                 frame.area
               )

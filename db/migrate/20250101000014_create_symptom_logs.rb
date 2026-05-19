@@ -10,6 +10,6 @@ class CreateSymptomLogs < ActiveRecord::Migration[8.1]
       t.timestamps
     end
 
-    add_index :symptom_logs, [:user_id, :logged_at]
+    add_index :symptom_logs, [ :user_id, :logged_at ]
   end
 end

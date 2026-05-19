@@ -7,6 +7,6 @@ class CreateIngredientFoodMappings < ActiveRecord::Migration[8.1]
       t.timestamps
     end
 
-    add_index :ingredient_food_mappings, [:ingredient_id, :food_id], unique: true
+    add_index :ingredient_food_mappings, [ :ingredient_id, :food_id ], unique: true
   end
 end

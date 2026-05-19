@@ -6,6 +6,6 @@ class CreateUserSuspectFoods < ActiveRecord::Migration[8.1]
       t.timestamp :added_at, null: false, default: -> { "CURRENT_TIMESTAMP" }
     end
 
-    add_index :user_suspect_foods, [:user_id, :food_id], unique: true
+    add_index :user_suspect_foods, [ :user_id, :food_id ], unique: true
   end
 end
