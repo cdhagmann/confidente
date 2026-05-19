@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+
+# Load Rails environment
+APP_PATH = File.expand_path("../config/application", __dir__)
+require_relative "../config/boot"
+require APP_PATH
+Rails.application.require_environment!
+
+require "ratatui_ruby"
+require_relative "../cli/app"
+
+Confidente::CLI::App.new.run
